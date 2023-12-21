@@ -129,11 +129,11 @@
 
             label = "adjust";
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
-&ext_power EP_ON  &none         &none         &rgb_ug       &none         &none                         &none  &none  &none  &none  &none  &none
-&none             &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
-&none             &none         &none         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none  &none
-                                &none         &none         &none         &none         &none    &none  &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
+&ext_power EP_TOG  &none         &none         &rgb_ug       &none         &none                         &none  &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none  &none
+                                 &none         &none         &none         &none         &none    &none  &none  &none  &none  &none
             >;
         };
     };
