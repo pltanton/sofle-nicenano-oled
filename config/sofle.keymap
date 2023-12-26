@@ -51,6 +51,7 @@
         em_email {
             bindings = <&email_dvorak>;
             key-positions = <45 27>;
+            layers = <1>;
         };
     };
 
