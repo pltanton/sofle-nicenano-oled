@@ -47,9 +47,21 @@
             key-positions = <32 33>;
             bindings = <&kp DEL>;
         };
+
+        em_email {
+            bindings = <&email_dvorak>;
+            key-positions = <45 27>;
+        };
     };
 
     macros {
+        email_dvorak: email_dvorak {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp P &kp S &kp K &kp L &kp G &kp V &kp S &kp DOT &kp A &kp L &kp K &kp S &kp L &kp AT &kp U &kp M &kp A &kp G &kp P &kp E &kp I &kp S &kp M>;
+            label = "EMAIL_DVORAK";
+            tap-ms = <3>;
+        };
     };
 
     behaviors {
