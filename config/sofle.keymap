@@ -16,11 +16,13 @@
 
 
 / {
-    // Activate ADJUST layer by pressing raise and lower
     sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
 
+    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
