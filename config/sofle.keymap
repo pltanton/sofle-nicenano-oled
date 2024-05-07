@@ -14,7 +14,6 @@
 #define RAISE 2
 #define ADJUST 3
 
-
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
@@ -23,6 +22,7 @@
     };
 
     // Activate ADJUST layer by pressing raise and lower
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -103,7 +103,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp LG(L) LG(R)>;
+                <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
 
         lower_layer {
@@ -125,7 +125,9 @@
                          &trans        &trans       &trans         &trans         &trans    &trans  &trans     &kp CAPSLOCK  &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings =
+                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
+                <&inc_dec_kp LG(N) LG(P)>;
         };
 
         raise_layer {
@@ -139,11 +141,11 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                      &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp DEL
-&trans   &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                      &kp PG_UP  &trans    &kp UP    &trans     &kp N0   &kp RBKT
-&trans   &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
-                     &trans     &trans       &trans       &trans    &trans    &trans  &trans     &trans    &trans    &trans
+&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                      &kp F6     &kp F7            &kp F8      &kp F9      &kp F10  &kp DEL
+&trans   &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                      &kp PG_UP  &trans            &kp UP      &trans      &kp N0   &kp RBKT
+&trans   &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                    &kp PG_DN  &kp LEFT          &kp DOWN    &kp RIGHT   &kp DEL  &kp BSPC
+&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &trans   &trans
+                     &trans     &trans       &trans       &trans    &trans    &trans  &trans     &trans            &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
