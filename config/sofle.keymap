@@ -103,7 +103,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp DOWN_ARROW UP_ARROW>;
+                <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
         lower_layer {
@@ -127,7 +127,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp LG(N) LG(P)>;
+                <&inc_dec_kp LG(L) LG(R)>;
         };
 
         raise_layer {
