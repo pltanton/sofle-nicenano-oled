@@ -87,7 +87,7 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-sensor-rotate";
             label = "NEW_BEHAVIOR";
-            sensor-binding-cells = <0>;
+            #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
     };
