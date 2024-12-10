@@ -15,6 +15,8 @@
 #define RAISE 2
 #define ADJUST 3
 
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
@@ -82,6 +84,12 @@
             #binding-cells = <0>;
             tapping-term-ms = <20>;
             bindings = <&mo 2>, <&mo 1>;
+        };
+        
+        msc {
+            acceleration-exponent = <1>;      // 0
+            time-to-max-speed-ms = <400>;      // 500
+            delay-ms = <0>;                   //   10
         };
 
         scroll_encoder: scroll_encoder {
