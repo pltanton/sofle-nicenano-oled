@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define LOWER 1
@@ -22,11 +23,11 @@
     };
 
     left_encoder {
-        steps = <40>;
+        steps = <80>;
     };
 
     right_encoder {
-        steps = <40>;
+        steps = <80>;
     };
 
     // Activate ADJUST layer by pressing raise and lower
@@ -109,9 +110,9 @@
                    &kp LALT  &kp LCTRL  &kp LGUI  &mo 1   &kp SPACE     &kp ENTER  &mod_2_1  &kp LG(SPACE)  &kp RCTRL  &kp RALT
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp PAGE_DOWN PAGE_UP>;
+            sensor-bindings = 
+                <&inc_dec_kp C_VOL_DN C_VOL_UP >,
+                <&inc_dec_kp <&msc SCRL_UP> <&msc SCRL_DOWN> >;
         };
 
         lower_layer {
@@ -133,9 +134,9 @@
                          &trans        &trans       &trans         &trans         &trans    &trans  &trans     &kp CAPSLOCK  &trans           &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_BRI_UP C_BRI_DN>,
-                <&inc_dec_kp LG(L) LG(R)>;
+            sensor-bindings = 
+                <&inc_dec_kp C_BRI_DN C_BRI_UP>,
+                <&inc_dec_kp <&msc SCRL_UP> <&msc SCRL_DOWN> >;
         };
 
         raise_layer {
@@ -155,8 +156,6 @@
 &trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans    &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &trans   &trans
                      &trans     &trans       &trans       &trans    &trans    &trans  &trans     &trans            &trans      &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
