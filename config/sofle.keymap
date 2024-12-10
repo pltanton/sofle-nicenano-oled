@@ -115,9 +115,7 @@
                    &kp LALT  &kp LCTRL  &kp LGUI  &mo 1   &kp SPACE     &kp ENTER  &mod_2_1  &kp LG(SPACE)  &kp RCTRL  &kp RALT
             >;
 
-            sensor-bindings = 
-                <&inc_dec_kp C_VOL_DN C_VOL_UP >,
-                <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll_encoder>;
         };
 
         lower_layer {
@@ -139,9 +137,7 @@
                          &trans        &trans       &trans         &trans         &trans    &trans  &trans     &kp CAPSLOCK  &trans           &trans
             >;
 
-            sensor-bindings = 
-                <&inc_dec_kp C_BRI_DN C_BRI_UP>,
-                <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &scroll_encoder>;
         };
 
         raise_layer {
