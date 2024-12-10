@@ -21,6 +21,14 @@
         triggers-per-rotation = <20>;
     };
 
+    left_encoder {
+        steps = <40>;
+    };
+
+    right_encoder {
+        steps = <40>;
+    };
+
     // Activate ADJUST layer by pressing raise and lower
 
     conditional_layers {
