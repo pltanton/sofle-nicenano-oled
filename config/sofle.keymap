@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define LOWER 1
@@ -88,7 +88,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "NEW_BEHAVIOR";
             #sensor-binding-cells = <0>;
-            bindings = <&none>, <&none>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
     };
 
