@@ -55,7 +55,7 @@
 
         combo_del {
             timeout-ms = <20>;
-            key-positions = <32 33>;
+            key-positions = <28 27>;
             bindings = <&kp DEL>;
         };
 
@@ -63,6 +63,12 @@
             bindings = <&email_dvorak>;
             key-positions = <45 27>;
             layers = <1>;
+        };
+
+        combo_ctrl_del {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <28 29>;
+            timeout-ms = <20>;
         };
     };
 
