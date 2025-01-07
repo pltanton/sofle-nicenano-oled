@@ -101,13 +101,10 @@
             delay-ms = <0>;                   //   10
         };
 
-        scroll_encoder: scroll_encoder {
+        sensor_rotate_msc: sensor_rotate_msc {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "SCROLL_ENCODER";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <30>;
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
         };
 
         hm: homerow_mods {
@@ -167,7 +164,7 @@
                      &trans  &trans     &trans     &trans                &trans    &trans  &trans                 &kp CAPSLOCK   &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &inc_dec_msc SCRL_DOWN SCRL_UP>;
         };
 
         raise_layer {
