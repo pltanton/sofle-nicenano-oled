@@ -101,12 +101,6 @@
             delay-ms = <0>;                   //   10
         };
 
-        inc_dec_msc: sensor_rotate_msc {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-        };
-
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -116,6 +110,15 @@
             bindings = <&kp>, <&kp>;
 
             require-prior-idle-ms = <125>;
+        };
+
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "SCROLL_ENCODER";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
         };
     };
 
@@ -133,11 +136,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE      &kp N1      &kp N2         &kp N3       &kp N4       &kp N5                                 &kp N6    &kp N7           &kp N8       &kp N9           &kp N0         &kp BSPC
-&kp TAB        &kp Q       &kp W          &kp E        &kp R        &kp T                                  &kp Y     &kp U            &kp I        &kp O            &kp P          &kp LBKT
-&gresc         &hm LGUI A  &hm LALT S     &hm LSHFT D  &hm LCTRL F  &kp G                                  &kp H     &hm LG(RCTRL) J  &hm RSHFT K  &hm RALT L       &hm RGUI SEMI  &kp SQT
-&kp BACKSLASH  &kp Z       &kp X          &kp C        &kp V        &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M            &kp COMMA    &kp DOT          &kp FSLH       &kp RIGHT_BRACKET
-                           &kp PAGE_DOWN  &kp PAGE_UP  &kp LGUI     &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LG(SPACE)    &kp INSERT   &kp PRINTSCREEN
+&kp GRAVE      &kp N1      &kp N2         &kp N3       &kp N4            &kp N5                                 &kp N6    &kp N7         &kp N8       &kp N9           &kp N0         &kp BSPC
+&kp TAB        &kp Q       &kp W          &kp E        &kp R             &kp T                                  &kp Y     &kp U          &kp I        &kp O            &kp P          &kp LBKT
+&gresc         &hm LGUI A  &hm LALT S     &hm LCTRL D  &hm LEFT_SHIFT F  &kp G                                  &kp H     &hm RSHFT J    &hm RCTRL K  &hm RALT L       &hm RGUI SEMI  &kp SQT
+&kp BACKSLASH  &kp Z       &kp X          &kp C        &kp V             &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M          &kp COMMA    &kp DOT          &kp FSLH       &kp RIGHT_BRACKET
+                           &kp PAGE_DOWN  &kp PAGE_UP  &kp LGUI          &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LG(SPACE)  &kp INSERT   &kp PRINTSCREEN
             >;
 
             sensor-bindings =
@@ -157,14 +160,16 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp F12    &kp F1    &kp F2  &kp F3     &kp F4     &kp F5                                  &kp F6                 &kp F7         &kp F8         &kp F9    &kp F10   &kp F11
-&kp GRAVE  &kp N1    &kp N2  &kp N3     &kp N4     &kp N5                                  &kp N6                 &kp N7         &kp N8         &kp N9    &kp N0    &trans
-&trans     &kp EXCL  &kp AT  &kp HASH   &kp DLLR   &kp PRCNT                               &kp CARET              &kp AMPS       &kp ASTERISK   &kp LPAR  &kp RPAR  &kp PIPE
-&trans     &trans    &trans  &kp MINUS  &kp EQUAL  &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_PARENTHESIS  &kp LS(MINUS)  &kp LS(EQUAL)  &trans    &trans    &trans
-                     &trans  &trans     &trans     &trans                &trans    &trans  &trans                 &kp CAPSLOCK   &trans         &trans
+&kp F12     &kp F1    &kp F2  &kp F3     &kp F4     &kp F5                                  &kp F6                 &kp F7         &kp F8         &kp F9    &kp F10   &kp F11
+&kp GRAVE   &kp N1    &kp N2  &kp N3     &kp N4     &kp N5                                  &kp N6                 &kp N7         &kp N8         &kp N9    &kp N0    &trans
+&caps_word  &kp EXCL  &kp AT  &kp HASH   &kp DLLR   &kp PRCNT                               &kp CARET              &kp AMPS       &kp ASTERISK   &kp LPAR  &kp RPAR  &kp PIPE
+&trans      &trans    &trans  &kp MINUS  &kp EQUAL  &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_PARENTHESIS  &kp LS(MINUS)  &kp LS(EQUAL)  &trans    &trans    &trans
+                      &trans  &trans     &trans     &trans                &trans    &trans  &trans                 &kp CAPSLOCK   &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &inc_dec_msc SCRL_DOWN SCRL_UP>;
+            sensor-bindings =
+                <&inc_dec_kp C_BRI_DN C_BRI_UP>,
+                <&scroll_encoder>;
         };
 
         raise_layer {
@@ -196,11 +201,11 @@
 
             label = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                              &none  &none  &none  &none  &none  &studio_unlock
-&ext_power EP_TOG  &none         &none         &none           &none         &none                                     &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none           &none         &none                                     &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none           &none         &none         &bootloader    &bootloader  &none  &none  &none  &none  &none  &none
-                                 &none         &msc SCRL_DOWN  &msc SCRL_UP  &none         &none          &none        &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                              &none           &none  &none  &none  &none  &studio_unlock
+&ext_power EP_TOG  &none         &none         &none           &none         &none                                     &none           &none  &none  &none  &none  &none
+&none              &none         &none         &none           &none         &none                                     &msc SCRL_UP    &none  &none  &none  &none  &none
+&none              &none         &none         &none           &none         &none         &bootloader    &bootloader  &msc SCRL_DOWN  &none  &none  &none  &none  &none
+                                 &none         &msc SCRL_DOWN  &msc SCRL_UP  &none         &none          &none        &none           &none  &none  &none
             >;
         };
     };
