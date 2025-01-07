@@ -14,7 +14,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
 
 &gresc {
     bindings = <&kp ESC>, <&kp CAPSLOCK>;
