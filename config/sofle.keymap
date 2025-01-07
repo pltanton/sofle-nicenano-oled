@@ -16,6 +16,10 @@
 #define ADJUST 3
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
+&gresc {
+    bindings = <&kp ESC>, <&kp CAPSLOCK>;
+};
+
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
