@@ -199,11 +199,11 @@
 
             label = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                              &none  &none  &none  &none  &none  &studio_unlock
-&ext_power EP_TOG  &none         &none         &none           &none         &none                                     &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none           &none         &none                                     &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none           &none         &none         &bootloader    &bootloader  &none  &none  &none  &none  &none  &none
-                                 &none         &msc SCRL_DOWN  &msc SCRL_UP  &none         &none          &none        &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                              &none           &none           &none  &none  &none  &studio_unlock
+&ext_power EP_TOG  &none         &none         &none           &none         &none                                     &none           &none           &none  &none  &none  &none
+&none              &none         &none         &none           &none         &none                                     &msc SCRL_UP    &msc MOVE_Y -5  &none  &none  &none  &none
+&none              &none         &none         &none           &none         &none         &bootloader    &bootloader  &msc SCRL_DOWN  &msc MOVE_Y 5   &none  &none  &none  &none
+                                 &none         &msc SCRL_DOWN  &msc SCRL_UP  &none         &none          &none        &none           &none           &none  &none
             >;
         };
     };
