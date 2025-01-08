@@ -20,6 +20,8 @@
     bindings = <&kp ESC>, <&kp CAPSLOCK>;
 };
 
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SLASH DOUBLE_QUOTES DOT COMMA>; };
+
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
