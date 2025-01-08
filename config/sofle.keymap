@@ -20,7 +20,7 @@
     bindings = <&kp ESC>, <&kp CAPSLOCK>;
 };
 
-&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE COLON LEFT_BRACE RIGHT_BRACE QUESTION>; };
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SEMICOLON COMMA DOT>; };
 
 / {
     sensors {
