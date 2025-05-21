@@ -142,7 +142,7 @@
 &kp TAB        &kp Q        &kp W          &kp E           &kp R             &kp T                                  &kp Y     &kp U          &kp I       &kp O            &kp P           &kp LBKT
 &gresc         &hm LCTRL A  &hm LALT S     &hm LC(LCMD) D  &hm LEFT_SHIFT F  &kp G                                  &kp H     &hm RSHFT J    &hm RCMD K  &hm RALT L       &hm RCTRL SEMI  &kp SQT
 &kp BACKSLASH  &kp Z        &kp X          &kp C           &kp V             &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M          &kp COMMA   &kp DOT          &kp FSLH        &kp RIGHT_BRACKET
-                            &kp PAGE_DOWN  &kp PAGE_UP     &kp LGUI          &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LC(SPACE)  &kp INSERT  &kp PRINTSCREEN
+                            &kp PAGE_DOWN  &kp PAGE_UP     &kp LCMD          &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LC(SPACE)  &kp INSERT  &kp PRINTSCREEN
             >;
 
             sensor-bindings =
