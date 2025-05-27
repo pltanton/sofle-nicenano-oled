@@ -53,10 +53,10 @@
             bindings = <&kp BSPC>;
         };
 
-        combo_ctl_bspc {
+        combo_alt_bspc {
             timeout-ms = <20>;
             key-positions = <30 31>;
-            bindings = <&kp LC(BSPC)>;
+            bindings = <&kp LA(BSPC)>;
         };
 
         combo_del {
@@ -71,8 +71,8 @@
             layers = <1>;
         };
 
-        combo_ctrl_del {
-            bindings = <&kp LC(DEL)>;
+        combo_alt_del {
+            bindings = <&kp LA(DEL)>;
             key-positions = <28 29>;
             timeout-ms = <20>;
         };
