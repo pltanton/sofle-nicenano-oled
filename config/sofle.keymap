@@ -25,7 +25,6 @@
 / {
     sensors {
         compatible = "zmk,keymap-sensors";
-        #sensor-binding-cells = <0>;
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>;
     };
@@ -99,7 +98,7 @@
         };
 
         msc {
-            acceleration-exponent = <1>;      // 0
+            acceleration-exponent = <1>;      // 
             time-to-max-speed-ms = <400>;      // 500
             delay-ms = <0>;                   //   10
         };
@@ -118,6 +117,7 @@
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             label = "SCROLL_ENCODER";
+            #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <30>;
         };
