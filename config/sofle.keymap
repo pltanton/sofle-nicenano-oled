@@ -14,7 +14,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 150
 
 &gresc {
     bindings = <&kp ESC>, <&kp CAPSLOCK>;
@@ -117,10 +117,8 @@
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             label = "SCROLL_ENCODER";
-            #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <20>;
+            tap-ms = <30>;
         };
     };
 
