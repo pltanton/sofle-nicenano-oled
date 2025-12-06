@@ -142,7 +142,7 @@
 &kp TAB        &kp Q           &kp W            &kp E               &kp R             &kp T                                  &kp Y     &kp U          &kp I        &kp O            &kp P          &kp LBKT
 &gresc         &hm LEFT_ALT A  &hm LEFT_META S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F  &kp G                                  &kp H     &hm RSHFT J    &hm RCTRL K  &hm RMETA L      &hm RALT SEMI  &kp SQT
 &kp BACKSLASH  &kp Z           &kp X            &kp C               &kp V             &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M          &kp COMMA    &kp DOT          &kp FSLH       &kp RIGHT_BRACKET
-                               &kp PAGE_DOWN    &kp PAGE_UP         &kp LALT          &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LC(SPACE)  &kp INSERT   &kp PRINTSCREEN
+                               &kp PAGE_DOWN    &kp PAGE_UP         &kp LMETA         &mo 1   &kp SPACE     &kp ENTER        &mod_2_1  &kp LC(SPACE)  &kp INSERT   &kp PRINTSCREEN
             >;
 
             sensor-bindings =
@@ -213,11 +213,11 @@
 
         MACOS {
             bindings = <
-&trans  &trans       &trans      &trans              &trans  &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
-&trans  &trans       &trans      &trans              &trans  &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
-&trans  &hm LCTRL A  &hm LALT S  &hm LEFT_COMMAND S  &trans  &trans                    &trans  &trans  &hm RIGHT_COMMAND J  &hm RIGHT_ALT L  &hm LS(RIGHT_CONTROL) SEMICOLON  &trans
-&trans  &trans       &trans      &trans              &trans  &trans  &trans    &trans  &trans  &trans  &trans               &trans           &trans                           &trans
-                     &trans      &trans              &trans  &trans  &trans    &trans  &trans  &trans  &trans               &trans
+&trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
+&trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
+&trans  &hm LCTRL A  &hm LALT S  &hm LEFT_COMMAND S  &trans    &trans                    &trans  &trans  &hm RIGHT_COMMAND J  &hm RIGHT_ALT L  &hm LS(RIGHT_CONTROL) SEMICOLON  &trans
+&trans  &trans       &trans      &trans              &trans    &trans  &trans    &trans  &trans  &trans  &trans               &trans           &trans                           &trans
+                     &trans      &trans              &kp LALT  &trans  &trans    &trans  &trans  &trans  &trans               &trans
             >;
         };
     };
