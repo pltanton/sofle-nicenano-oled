@@ -47,34 +47,10 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_bspc {
-            timeout-ms = <20>;
-            key-positions = <31 32>;
-            bindings = <&kp BSPC>;
-        };
-
-        combo_alt_bspc {
-            timeout-ms = <20>;
-            key-positions = <30 31>;
-            bindings = <&kp LC(BSPC)>;
-        };
-
-        combo_del {
-            timeout-ms = <20>;
-            key-positions = <28 27>;
-            bindings = <&kp DEL>;
-        };
-
         em_email {
             bindings = <&email_dvorak>;
             key-positions = <45 27>;
             layers = <1>;
-        };
-
-        combo_alt_del {
-            bindings = <&kp LC(DEL)>;
-            key-positions = <28 29>;
-            timeout-ms = <20>;
         };
     };
 
