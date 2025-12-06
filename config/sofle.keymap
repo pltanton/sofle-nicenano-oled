@@ -185,10 +185,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7            &kp F8      &kp F9      &kp F10  &kp DEL
-&trans   &kp INS     &trans     &kp K_CMENU  &trans       &trans                    &kp PG_UP  &trans            &kp UP      &trans      &kp N0   &kp RBKT
-&trans   &trans      &trans     &trans       &caps_word   &trans                    &kp PG_DN  &kp LEFT          &kp DOWN    &kp RIGHT   &kp DEL  &kp BSPC
-&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &trans   &trans
+&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7            &kp F8      &kp F9      &kp F10   &trans
+&trans   &kp INS     &trans     &kp K_CMENU  &trans       &trans                    &kp PG_UP  &trans            &kp UP      &trans      &kp N0    &kp RBKT
+&trans   &trans      &trans     &trans       &caps_word   &trans                    &kp PG_DN  &kp LEFT          &kp DOWN    &kp RIGHT   &kp BSPC  &kp DEL
+&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &trans    &trans
                      &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans            &trans      &trans
             >;
         };
@@ -215,7 +215,7 @@
             bindings = <
 &trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
 &trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans  &trans               &trans           &trans                           &trans
-&trans  &hm LCTRL A  &hm LALT S  &hm LEFT_COMMAND S  &trans    &trans                    &trans  &trans  &hm RIGHT_COMMAND J  &hm RIGHT_ALT L  &hm LS(RIGHT_CONTROL) SEMICOLON  &trans
+&trans  &hm LCTRL A  &hm LALT S  &hm LEFT_COMMAND D  &trans    &trans                    &trans  &trans  &hm RIGHT_COMMAND K  &hm RIGHT_ALT L  &hm LS(RIGHT_CONTROL) SEMICOLON  &trans
 &trans  &trans       &trans      &trans              &trans    &trans  &trans    &trans  &trans  &trans  &trans               &trans           &trans                           &trans
                      &trans      &trans              &kp LALT  &trans  &trans    &trans  &trans  &trans  &trans               &trans
             >;
