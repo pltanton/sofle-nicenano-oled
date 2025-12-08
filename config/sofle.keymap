@@ -139,6 +139,8 @@
 &trans  &trans       &trans      &trans              &trans    &trans  &trans    &trans  &trans  &trans         &trans               &trans           &trans                           &trans
                      &trans      &trans              &kp LALT  &trans  &trans    &trans  &trans  &kp LC(SPACE)  &trans               &trans
             >;
+
+            label = "macos";
         };
 
         lower {
