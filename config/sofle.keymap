@@ -194,6 +194,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp LA(BACKSPACE)  &kp LA(DELETE)
                 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
+
+            label = "media mac";
         };
 
         adjust {
