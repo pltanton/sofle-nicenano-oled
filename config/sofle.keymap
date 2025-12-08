@@ -40,6 +40,11 @@
 
         adjust_layer {
             if-layers = <2 3>;
+            then-layer = <5>;
+        };
+
+        raise_macos {
+            if-layers = <1 3>;
             then-layer = <4>;
         };
     };
@@ -103,8 +108,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            label = " ";
+        default {
+            label = "base";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -126,7 +131,7 @@
                 <&inc_dec_msc SCRL_UP SCRL_DOWN>;
         };
 
-        MACOS {
+        macos {
             bindings = <
 &trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans         &trans               &trans           &trans                           &trans
 &trans  &trans       &trans      &trans              &trans    &trans                    &trans  &trans         &trans               &trans           &trans                           &trans
@@ -136,8 +141,8 @@
             >;
         };
 
-        lower_layer {
-            label = "symbols";
+        lower {
+            label = "symbol";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
@@ -160,7 +165,7 @@
                 <&inc_dec_msc SCRL_UP SCRL_DOWN>;
         };
 
-        raise_layer {
+        raise {
             label = "media";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -171,15 +176,25 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7            &kp F8      &kp F9      &kp F10   &trans
-&trans   &kp INS     &trans     &kp K_CMENU  &trans       &trans                    &kp PG_UP  &trans            &kp UP      &trans      &kp N0    &kp RBKT
-&trans   &trans      &trans     &trans       &caps_word   &trans                    &kp PG_DN  &kp LEFT          &kp DOWN    &kp RIGHT   &kp BSPC  &kp DEL
-&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &trans    &trans
+&kp F12  &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                    &kp F6     &kp F7            &kp F8      &kp F9      &kp F10            &trans
+&trans   &kp INS     &trans     &kp K_CMENU  &trans       &trans                    &kp PG_UP  &trans            &kp UP      &trans      &kp N0             &kp RBKT
+&trans   &trans      &trans     &trans       &caps_word   &trans                    &kp PG_DN  &kp LEFT          &kp DOWN    &kp RIGHT   &kp BSPC           &kp DEL
+&trans   &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &trans  &trans    &trans  &trans     &kp K_PLAY_PAUSE  &kp K_PREV  &kp K_NEXT  &kp LC(BACKSPACE)  &kp LC(DELETE)
                      &trans     &trans       &trans       &trans  &trans    &trans  &trans     &trans            &trans      &trans
             >;
         };
 
-        adjust_layer {
+        raise_macos {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans             &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans             &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans             &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp LA(BACKSPACE)  &kp LA(DELETE)
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        adjust {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
