@@ -14,9 +14,9 @@
 ---
 include:
   - board: nice_nano
-    shield: sofle_left nice_view_adapter nice_view
+    shield: sofle_left
     snippet: studio-rpc-usb-uart 
   - board: nice_nano
-    shield: sofle_right nice_view_adapter nice_view
+    shield: sofle_right
   - board: nice_nano
     shield: settings_reset
