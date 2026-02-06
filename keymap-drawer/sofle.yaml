@@ -201,7 +201,7 @@ layers:
   - {t: ▽, type: trans}
   - CMENU
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - HOME
   - PG UP
   - {t: ▽, type: trans}
   - UP
@@ -213,7 +213,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&caps_word'
-  - {t: ▽, type: trans}
+  - END
   - PG DN
   - LEFT
   - DOWN
@@ -228,7 +228,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - PRINTSCREEN
   - PLAY PAUSE
   - PREV
   - NEXT
