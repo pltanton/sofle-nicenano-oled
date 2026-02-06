@@ -343,7 +343,7 @@ layers:
   - ''
   - ''
   - {t: mac, h: toggle}
-  - ''
+  - {t: GAME, h: toggle}
   - ''
   - ''
   - ''
