@@ -53,7 +53,7 @@ layers:
   - ']'
   - PAGE DOWN
   - PAGE UP
-  - LMETA
+  - ''
   - symbol
   - SPACE
   - ENTER
@@ -96,7 +96,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: K, h: RIGHT COMMAND}
   - {t: L, h: RIGHT ALT}
-  - {t: ;, h: Sft+RIGHT CONTROL}
+  - {t: ;, h: RIGHT CONTROL}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -114,14 +114,14 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+SPACE
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Sft+Gui+4
   symbol:
   - F12
   - F1
