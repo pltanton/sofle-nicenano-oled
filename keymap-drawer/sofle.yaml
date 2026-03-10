@@ -53,7 +53,7 @@ layers:
   - ']'
   - PAGE DOWN
   - PAGE UP
-  - ''
+  - Alt+Ctl+Gui+LSHFT
   - symbol
   - SPACE
   - ENTER
