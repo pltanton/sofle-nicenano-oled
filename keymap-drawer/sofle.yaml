@@ -119,7 +119,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+SPACE
+  - F18
   - {t: ▽, type: trans}
   - Ctl+Sft+Gui+4
   symbol:
