@@ -20,7 +20,7 @@
     bindings = <&kp ESC>, <&kp CAPSLOCK>;
 };
 
-
+&nice_view_spi { cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>; };
 
 
 &caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE COMMA DOT SEMICOLON COLON GREATER_THAN LESS_THAN>; };
