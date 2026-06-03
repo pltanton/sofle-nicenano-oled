@@ -22,7 +22,6 @@
 
 &nice_view_spi { cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>; };
 
-
 &caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE COMMA DOT SEMICOLON COLON GREATER_THAN LESS_THAN>; };
 
 / {
@@ -136,11 +135,11 @@
 
         macos {
             bindings = <
-&trans  &trans       &trans      &trans              &trans  &trans                    &trans  &trans   &trans               &trans                    &trans                       &trans
-&trans  &trans       &trans      &trans              &trans  &trans                    &trans  &trans   &trans               &trans                    &trans                       &trans
-&trans  &hm LCTRL A  &hm LALT S  &hm LEFT_COMMAND D  &trans  &trans                    &trans  &trans   &hm RIGHT_COMMAND K  &hm RIGHT_ALT L           &hm RIGHT_CONTROL SEMICOLON  &trans
-&trans  &trans       &trans      &trans              &trans  &trans  &trans    &trans  &trans  &trans   &trans               &trans                    &trans                       &trans
-                     &trans      &trans              &trans  &trans  &trans    &trans  &trans  &kp F18  &trans               &kp LC(LS(LG(NUMBER_4)))
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans  &trans                    &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp F18  &trans  &kp LC(LS(LG(NUMBER_4)))
             >;
 
             label = "mac";
