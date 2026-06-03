@@ -5,10 +5,12 @@
  */
 
 #include <behaviors.dtsi>
+#include <behaviors/default_layer.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk_behavior_default_layer/default_layer.h>
 
 #define BASE 0
 #define LOWER 1
@@ -213,7 +215,7 @@
 &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                              &none           &none  &none  &none  &none  &studio_unlock
 &ext_power EP_TOG  &none         &none         &none           &none         &none                                     &none           &none  &none  &none  &none  &none
 &none              &none         &none         &none           &none         &none                                     &msc SCRL_UP    &none  &none  &none  &none  &none
-&tog 1             &tog 6        &none         &none           &none         &none         &bootloader    &bootloader  &msc SCRL_DOWN  &none  &none  &none  &none  &none
+&df DF_INC         &tog 6        &none         &none           &none         &none         &bootloader    &bootloader  &msc SCRL_DOWN  &none  &none  &none  &none  &none
                                  &none         &msc SCRL_DOWN  &msc SCRL_UP  &none         &none          &none        &none           &none  &none  &none
             >;
         };
