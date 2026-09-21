@@ -52,8 +52,8 @@ layers:
   - /
   - ']'
   - PAGE DOWN
-  - PAGE UP
-  - Alt+Ctl+Gui+LSHFT
+  - Ctl+LGUI
+  - Alt+Ctl+LGUI
   - symbol
   - SPACE
   - ENTER
