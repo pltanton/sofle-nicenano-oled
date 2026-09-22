@@ -120,21 +120,30 @@
             // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
             // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               | PGDN| MOD2 | MOD1 | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+            //               | PGDN| F18  | MOD1 | LOWER| SPACE  |  | ENTER | RAISE| MOD2  | INS   | PSCR |
             //
-            // MOD1 = Ctrl+Alt+Gui, MOD2 = Ctrl+Gui — два WM-модификатора на
-            // соседних клавишах. Shift в MOD1 не входит намеренно: он остаётся
-            // свободным и даёт второй уровень («возьми окно с собой»).
-            // Те же две клавиши в тех же позициях у kanata на маке и omen-14.
-            // Свап lmet<->lctl в sofle.kbd обоим безразличен: ctrl и gui входят
-            // в каждую маску, поменять их местами — то же самое множество.
+            // MOD1 = Ctrl+Alt+Gui, MOD2 = Ctrl+Gui — по одному WM-модификатору
+            // под каждый большой палец. Ряд читается изнутри наружу и одинаков
+            // на трёх клавиатурах: [раскладка] [MOD1] ПРОБЕЛ [MOD2].
+            //
+            // F18 — переключение раскладки: на маке его ловит symbolichotkey 60,
+            // на omen-14 niri вешает на ту же клавишу xkb-smart-switch. Раньше
+            // F18 жил на правом пальце в слое macos; ушёл влево, чтобы позиция
+            // совпала с двумя другими клавиатурами, и слой macos его больше не
+            // переопределяет.
+            //
+            // Shift в MOD1 не входит намеренно: он остаётся свободным и даёт
+            // второй уровень грамматики («возьми окно с собой»).
+            //
+            // Свап lmet<->lctl в sofle.kbd обеим маскам безразличен: ctrl и gui
+            // входят в каждую, поменять их местами — то же самое множество.
 
             bindings = <
 &kp GRAVE      &kp N1          &kp N2           &kp N3              &kp N4                 &kp N5                                 &kp N6    &kp N7         &kp N8       &kp N9           &kp N0         &kp BSPC
 &kp TAB        &kp Q           &kp W            &kp E               &kp R                  &kp T                                  &kp Y     &kp U          &kp I        &kp O            &kp P          &kp LBKT
 &gresc         &hm LEFT_ALT A  &hm LEFT_META S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F       &kp G                                  &kp H     &hm RSHFT J    &hm RCTRL K  &hm RMETA L      &hm RALT SEMI  &kp SQT
 &kp BACKSLASH  &kp Z           &kp X            &kp C               &kp V                  &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M          &kp COMMA    &kp DOT          &kp FSLH       &kp RIGHT_BRACKET
-                               &kp PAGE_DOWN    &kp LC(LGUI)        &kp LA(LC(LGUI))       &mo 2   &kp SPACE     &kp ENTER        &mod_2_1  &kp LG(SPACE)  &kp INSERT   &kp PRINTSCREEN
+                               &kp PAGE_DOWN    &kp F18             &kp LA(LC(LGUI))       &mo 2   &kp SPACE     &kp ENTER        &mod_2_1  &kp LC(LGUI)   &kp INSERT   &kp PRINTSCREEN
             >;
 
             sensor-bindings =
@@ -148,7 +157,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans  &trans                    &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp F18  &trans  &kp LC(LS(LG(NUMBER_4)))
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans  &kp LC(LS(LG(NUMBER_4)))
             >;
 
             label = "mac";
