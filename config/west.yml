@@ -9,13 +9,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 4dd95d7840eb3d5a3f59bb29fbf1ab054715ef85  # main
       import: app/west.yml
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
-      revision: main #new entry
+      revision: 0a50fe209d929c916c5664c6affd0f4977c6b012  # main
     - name: zmk-feature-default-layer
       remote: cormoran
-      revision: main
+      revision: 92728246f80d327709839b2dbf5cf11880ff87e1  # main
   self:
     path: config
