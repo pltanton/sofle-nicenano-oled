@@ -12,17 +12,18 @@ flash side:
         *) echo "unknown side: {{side}} (left, right, settings_reset)" >&2; exit 1 ;;
     esac
 
+    repo=$(git remote get-url origin | sed -E 's#/+$##; s#\.git$##; s#^.*[:/]([^/]+/[^/]+)$#\1#')
     branch=$(git rev-parse --abbrev-ref HEAD)
-    run=$(gh run list -w build.yml -b "$branch" -s success -L 1 --json databaseId,headSha \
+    run=$(gh run list -R "$repo" -w build.yml -b "$branch" -s success -L 1 --json databaseId,headSha \
         --jq '.[0] | "\(.databaseId) \(.headSha[:7])"')
-    [ -n "$run" ] || { echo "no successful build on $branch" >&2; exit 1; }
+    [ -n "$run" ] || { echo "no successful build of $branch in $repo" >&2; exit 1; }
     read -r run_id sha <<<"$run"
-    [ "$sha" = "$(git rev-parse --short=7 origin/"$branch" 2>/dev/null)" ] \
-        || echo "warning: latest green build is $sha, not the tip of origin/$branch" >&2
+    [ "$sha" = "$(git rev-parse --short=7 HEAD)" ] \
+        || echo "warning: flashing the latest green build $sha, local HEAD is $(git rev-parse --short=7 HEAD)" >&2
 
     dir=$(mktemp -d)
     trap 'rm -rf "$dir"' EXIT
-    gh run download "$run_id" -n firmware -D "$dir"
+    gh run download -R "$repo" "$run_id" -n firmware -D "$dir"
     uf2=$(find "$dir" -name "$pattern" | head -1)
     [ -n "$uf2" ] || { echo "no $pattern in run $run_id" >&2; exit 1; }
     echo "firmware: $(basename "$uf2") (run $run_id, $sha)"
