@@ -52,13 +52,13 @@ layers:
   - /
   - ']'
   - PAGE DOWN
-  - F18
+  - PAGE UP
   - Alt+Ctl+LGUI
   - symbol
   - SPACE
   - ENTER
   - '&mod_2_1'
-  - LGUI
+  - {t: F18, h: LGUI}
   - INSERT
   - PRINTSCREEN
   mac:
@@ -119,9 +119,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+LGUI
+  - {t: F18, h: Ctl+LGUI}
   - {t: ▽, type: trans}
-  - Ctl+Sft+Gui+4
+  - {t: Ctl+Sft+Gui+4, s: Ctl+Sft+Gui+7}
   symbol:
   - F12
   - F1
