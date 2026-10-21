@@ -82,6 +82,23 @@
             bindings = <&mo 3>, <&mo 2>;
         };
 
+        mod2_f18: mod2_f18 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Alt+PSCR на маке — скриншот окна, как Alt+Print в niri. Alt маскируется,
+        // Ctrl+Shift+Cmd+7 ловит Hammerspoon (nixos-config-flake, hammerspoon/wm.nix).
+        mac_pscr: mac_pscr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(LG(NUMBER_4)))>, <&kp LC(LS(LG(NUMBER_7)))>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
         msc {
             acceleration-exponent = <1>;      // 
             time-to-max-speed-ms = <400>;      // 500
@@ -120,18 +137,15 @@
             // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
             // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               | PGDN| F18  | MOD1 | LOWER| SPACE  |  | ENTER | RAISE| MOD2  | INS   | PSCR |
+            //               | PGDN| PGUP | MOD1 | LOWER| SPACE  |  | ENTER | RAISE| MOD2  | INS   | PSCR |
             //
             // MOD1 = Ctrl+Alt+Gui, MOD2 = Gui (niri), в слое macos — Ctrl+Gui
             // (OmniWM). По одному WM-модификатору под каждый большой палец.
-            // Ряд читается изнутри наружу и одинаков на трёх клавиатурах:
-            // [раскладка] [MOD1] ПРОБЕЛ [MOD2].
             //
-            // F18 — переключение раскладки: на маке его ловит symbolichotkey 60,
-            // на omen-14 niri вешает на ту же клавишу xkb-smart-switch. Раньше
-            // F18 жил на правом пальце в слое macos; ушёл влево, чтобы позиция
-            // совпала с двумя другими клавиатурами, и слой macos его больше не
-            // переопределяет.
+            // F18 — переключение раскладки, тап MOD2 (зажатие — MOD2): на маке его
+            // ловит symbolichotkey 60, на omen-14 niri вешает на ту же клавишу
+            // xkb-smart-switch. Так же устроен zmk-corne. На встроенных клавиатурах
+            // мака и omen-14 F18 остался отдельной клавишей слева от Mod1.
             //
             // Shift в MOD1 не входит намеренно: он остаётся свободным и даёт
             // второй уровень грамматики («возьми окно с собой»).
@@ -144,7 +158,7 @@
 &kp TAB        &kp Q           &kp W            &kp E               &kp R                  &kp T                                  &kp Y     &kp U          &kp I        &kp O            &kp P          &kp LBKT
 &gresc         &hm LEFT_ALT A  &hm LEFT_META S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F       &kp G                                  &kp H     &hm RSHFT J    &hm RCTRL K  &hm RMETA L      &hm RALT SEMI  &kp SQT
 &kp BACKSLASH  &kp Z           &kp X            &kp C               &kp V                  &kp B   &kp C_MUTE    &kp LG(LS(F12))  &kp N     &kp M          &kp COMMA    &kp DOT          &kp FSLH       &kp RIGHT_BRACKET
-                               &kp PAGE_DOWN    &kp F18             &kp LA(LC(LGUI))       &mo 2   &kp SPACE     &kp ENTER        &mod_2_1  &kp LGUI       &kp INSERT   &kp PRINTSCREEN
+                               &kp PAGE_DOWN    &kp PAGE_UP         &kp LA(LC(LGUI))       &mo 2   &kp SPACE     &kp ENTER        &mod_2_1  &mod2_f18 LGUI F18  &kp INSERT   &kp PRINTSCREEN
             >;
 
             sensor-bindings =
@@ -158,7 +172,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans  &trans                    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans  &trans                    &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp LC(LGUI)  &trans  &kp LC(LS(LG(NUMBER_4)))
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &mod2_f18 LC(LGUI) F18  &trans  &mac_pscr
             >;
 
             label = "mac";
