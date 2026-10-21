@@ -1,0 +1,4 @@
+name: bootloader-on-1200-baud
+append:
+  EXTRA_DTC_OVERLAY_FILE: bootloader-on-1200-baud.overlay
+  EXTRA_CONF_FILE: bootloader-on-1200-baud.conf

@@ -15,7 +15,9 @@
 include:
   - board: nice_nano//zmk
     shield: sofle_left nice_view_adapter nice_view_gem
+    snippet: bootloader-on-1200-baud
   - board: nice_nano//zmk
     shield: sofle_right nice_view_adapter nice_view_gem
+    snippet: bootloader-on-1200-baud
   - board: nice_nano//zmk
     shield: settings_reset

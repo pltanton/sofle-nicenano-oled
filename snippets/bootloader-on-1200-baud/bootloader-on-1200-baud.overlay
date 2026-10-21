@@ -1,0 +1,5 @@
+&zephyr_udc0 {
+    bootloader_cdc_acm_uart: bootloader_cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};

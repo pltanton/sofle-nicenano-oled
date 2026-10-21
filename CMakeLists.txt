@@ -1,0 +1,1 @@
+target_sources_ifdef(CONFIG_ZMK_BOOTLOADER_ON_1200_BAUD app PRIVATE src/bootloader_on_1200_baud.c)
